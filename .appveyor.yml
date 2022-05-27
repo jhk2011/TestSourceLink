@@ -1,0 +1,15 @@
+version: 1.0.{build}
+image: Visual Studio 2022
+configuration: Release
+platform: Any CPU
+before_build:
+- pwsh: dotnet restore
+build:
+  verbosity: minimal
+test:
+  assemblies:
+    only:
+    - "'**\\*.tests.dll"
+artifacts:
+- path: TestSourceLink\bin\$(configuration)
+  name: TestSourceLink
