@@ -20,6 +20,8 @@ namespace TestSourceLink.tests
         {
             using (var db = new MyDbContext())
             {
+                db.Database.EnsureCreated();
+
                 db.Person.Add(new Person { Name = "test" });
                 db.SaveChanges();
             }
