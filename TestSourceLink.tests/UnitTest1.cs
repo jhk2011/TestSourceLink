@@ -4,9 +4,31 @@ namespace TestSourceLink.tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Fail()
         {
+            Assert.Fail("fail");
+        }
 
+        [TestMethod]
+        public void Pass()
+        {
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void TestDb()
+        {
+            using (var db = new MyDbContext())
+            {
+                db.Person.Add(new Person { Name = "test" });
+                db.SaveChanges();
+            }
+
+            using (var db = new MyDbContext())
+            {
+                var items = db.Person.ToList();
+                Assert.IsTrue(items.Any(x => x.Name == "test"));
+            }
         }
     }
 }

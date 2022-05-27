@@ -13,3 +13,5 @@ test:
 artifacts:
 - path: TestSourceLink\bin\$(configuration)
   name: TestSourceLink
+init:
+- net start MSSQL$SQL2019

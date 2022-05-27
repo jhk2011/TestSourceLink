@@ -10,5 +10,14 @@ namespace TestSourceLink
         {
             Console.WriteLine("222");
         }
+
+        public void G()
+        {
+            using (var db = new MyDbContext())
+            {
+                db.Add(new Person { Name = "test" });
+                db.SaveChanges();
+            }
+        }
     }
 }
