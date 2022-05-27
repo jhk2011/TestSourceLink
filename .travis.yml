@@ -1,0 +1,6 @@
+language: csharp
+solution: TestSourceLink.sln
+mono: none
+dotnet: 6.0.5
+script:
+ - dotnet restore

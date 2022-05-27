@@ -8,7 +8,7 @@ namespace TestSourceLink
     {
         public void F()
         {
-            Console.WriteLine("OK");
+            Console.WriteLine("222");
         }
     }
 }
